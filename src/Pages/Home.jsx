@@ -12,4 +12,4 @@ const Home = ({ user, token }) => {
     );
 };
 
-export default Home;
+export { Home };
