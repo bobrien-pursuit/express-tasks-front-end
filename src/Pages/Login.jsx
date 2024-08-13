@@ -40,13 +40,13 @@ const Login = ({ setUser, setToken }) => {
                       username: '',
                       password_hash: ''
                   }))
-                  navigate('/tasks');
-              } else {
-                  console.log(res)
-              }
-          })
-          .catch(err => console.log(err))
-  
+                } else {
+                    console.log(res)
+                }
+            })
+            .catch(err => console.log(err));
+            
+            navigate('/tasks');
       
     };
   

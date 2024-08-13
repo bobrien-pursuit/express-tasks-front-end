@@ -20,19 +20,22 @@ function App() {
      <Routes>
       <Route 
         path="/" 
-        element={<Home />} />
+        element={<Home />} 
+        />
       <Route 
         path='/login' 
         element={
         <Login 
           setUser={setUser} 
-          setToken={setToken}/>} />
+          setToken={setToken}/>} 
+          />
       <Route 
         path="/signup" 
       element={
         <Signup 
           setUser={setUser} 
-          setToken={setToken}/>} />
+          setToken={setToken}/>} 
+          />
      </Routes>
      </>
   )
