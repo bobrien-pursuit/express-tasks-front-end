@@ -40,7 +40,7 @@ const Login = ({ setUser, setToken }) => {
                       username: '',
                       password_hash: ''
                   }))
-                  navigate('/');
+                  navigate('/tasks');
               } else {
                   console.log(res)
               }
