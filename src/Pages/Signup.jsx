@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Col, Row, Button} from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -10,6 +11,8 @@ const Signup = () => {
         email: "",
         password_hash: "",
     });
+
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         const { name, value } = event.target
@@ -32,14 +35,27 @@ const Signup = () => {
         })
             .then(res => res.json())
             .then(res => {
-                console.log(res)
-                setFormData((prev) => ({
-                    username: '',
-                    email: '',
-                    password_hash: ''
-                }))
+                // console.log(res)
+                // setFormData((prev) => ({
+                //     username: '',
+                //     email: '',
+                //     password_hash: ''
+                // }))
+                if(res.user.user_id){
+                    const { user, token } = res
+                    setUser(user)
+                    setToken(token)
+                    setFormData((prev) => ({
+                        username: '',
+                        email: '',
+                        password_hash: ''
+                    }))
+                } else {
+                    console.log(res)
+                }
             })
             .catch(err => console.log(err))
+            navigate('/')
     }
 
 
