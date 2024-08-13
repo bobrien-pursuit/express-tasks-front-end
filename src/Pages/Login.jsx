@@ -45,7 +45,7 @@ const Login = ({ setUser, setToken }) => {
                 }
             })
             .catch(err => console.log(err));
-            
+
             navigate('/tasks');
       
     };
@@ -77,7 +77,7 @@ const Login = ({ setUser, setToken }) => {
                 />
               </Form.Group>
   
-              <Button variant="primary" type="submit">
+              <Button variant="danger" type="submit">
                 Log in
               </Button>
             </Form>
