@@ -18,7 +18,8 @@ function App() {
      <NavBar
       user={user} 
       setUser={setUser} 
-      setToken={setToken}/>
+      setToken={setToken} 
+    />
      <Routes>
       <Route 
         path="/" 

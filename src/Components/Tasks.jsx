@@ -32,7 +32,7 @@ const Tasks = ({ user, token }) => {
         })
             .then(res => res.json())
             .then(res => setTasks(() => res))
-    }, [user, tasks])
+    }, [user])
 
     // Sort the tasks by ID number so they keep the same order when updating them
     const sortedTasks = tasks.sort((a,b) => a.task_id < b.task_id ? -1: 1)
