@@ -6,6 +6,7 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
 import ProtectedRoute from './Pages/ProtectedRoute';
+import Tasks from './Components/Tasks';
 
 function App() {
 
