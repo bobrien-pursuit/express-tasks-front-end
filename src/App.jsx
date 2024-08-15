@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Home from './Pages/Home';
+import ProtectedRoute from './Pages/ProtectedRoute';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
      <Routes>
       <Route 
         path="/" 
-        element={<Home />} 
+        element={<Home user={user}/>} 
         />
       <Route 
         path='/login' 
@@ -36,6 +37,17 @@ function App() {
           setUser={setUser} 
           setToken={setToken}/>} 
           />
+      <Route
+        path="/tasks"
+        element={
+          <ProtectedRoute
+            element={Tasks}
+            isAuthenticated={!!user && !!token}
+            user={user}
+            token={token}
+          />
+         }
+      />
      </Routes>
      </>
   )
